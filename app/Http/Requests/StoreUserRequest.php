@@ -23,13 +23,26 @@ class StoreUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email',
-            'password' => [
-                'required',
-                Password::min(8)
-                ->letters()
-            ]
+            'name' => 'required|string|max:225',
+            'passportNum' => 'required|string|max:225',
+            'applicationID' => 'required|number',
+            'examDate' => 'required|date',
+            'nationality' => 'required|string|max:225',
+            'documentID' => 'required|number',
+            'birthDate' => 'required|data',
+            'questionsNum' => 'required|number',
+            'correctsNum' => 'required|number',
+            'inCorrectsNum' => 'required|number',
+            'blanksNum' => 'required|number',
+            'score' => 'required|number',
+            'cerType' => 'required|number',
+            // 'name' => 'required|string|max:255',
+            // 'email' => 'required|email|unique:users,email',
+            // 'password' => [
+            //     'required',
+            //     Password::min(8)
+            //     ->letters()
+            // ]
 
         ];
     }

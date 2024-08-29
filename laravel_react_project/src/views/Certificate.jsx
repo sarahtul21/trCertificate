@@ -172,7 +172,7 @@ function Certificate() {
                     </table>
                 </div>
 
-                <QRCodeBox cerUrl={user.name+'??id='+user.id}/>
+                <QRCodeBox cerUrl={user.id}/>
             </div>
         </div>
 
