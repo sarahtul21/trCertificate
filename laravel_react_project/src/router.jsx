@@ -21,7 +21,7 @@ const router = createBrowserRouter ([
                 element: <UserForm key="userCreate"/>
             },
             {
-                path: '/users/:id',
+                path: '/student/:id',
                 element: <Certificate key="userUpdate" />
             },
         ]

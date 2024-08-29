@@ -5,7 +5,7 @@ import QRCode from 'qrcode'
 function QRCodeBox({cerUrl}) {
 
     const [src,setSrc] = useState('')
-    const linkURL = 'https://www.eryoserciyes-edu-tr.somthing/'
+    const linkURL = 'https://www.eryoserciyes-edu-tr.somthing/student/'
 
     useEffect(()=>{
         QRCode.toDataURL(linkURL).then((data)=>{
