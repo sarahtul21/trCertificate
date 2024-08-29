@@ -23,10 +23,10 @@ Route::middleware('auth:sanctum')->group(function() {
         return $request->user();
     });
 
-    Route::apiResource('/users',UserController::class);
+    // Route::apiResource('/users',UserController::class);
 });
+Route::apiResource('/users',UserController::class);
 
 
-
-Route::post('login',[AuthController::class,'login']);
-Route::post('register',[AuthController::class,'register']);
+// Route::post('login',[AuthController::class,'login']);
+// Route::post('register',[AuthController::class,'register']);
