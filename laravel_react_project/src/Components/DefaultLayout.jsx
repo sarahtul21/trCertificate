@@ -10,7 +10,7 @@ export default function DefaultLayout(){
     if(!token){
        return <Navigate to='/login'/>
     }
-    
+
     const onLogout =  (ev) =>{
         ev.preventDefault();
         axiosClient.get('/logout')
@@ -30,7 +30,7 @@ export default function DefaultLayout(){
     return(
         <div id="defaultLayout">
          <div className="content">
-            <header>
+            {/* <header>
                 <div>
                     Header
                 </div>
@@ -38,7 +38,7 @@ export default function DefaultLayout(){
                     {user.name}
                     <a href="#" onClick={onLogout} className="btn-logout"> Logout</a>
                 </div>
-            </header>
+            </header> */}
             <main>
             <Outlet />
             </main>
