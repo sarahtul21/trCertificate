@@ -1,18 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CerController;
-use App\Http\Controllers\TrCerController;
-use App\Models\Cer;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
 
 Route::get('/', function () {
-    $cers=Cer::all();
-    return view('welcome' , compact('cers'));
-});
-
-Route::get('/addCer', function () {
     return view('welcome');
 });
-
-Route::get('/cer', [CerController::class, 'index']);
-

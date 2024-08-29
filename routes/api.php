@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\CerController;
-use App\Http\Controllers\TrCerController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,16 +16,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::middleware('auth:sanctum')->group(function() {
+    Route::get('logout',[AuthController::class,'logout']);
+
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+
+    Route::apiResource('/users',UserController::class);
+});
 
 
-    // Route::apiResource('/trCer',[TrCerController::class, 'index']);
-    // Route::get('/addCer', function () {
-    //     return view('welcome');
-    // });
 
-    // Route::get('/cer', [CerController::class, 'index']);
-
-
-
-// Route::post('login',[AuthController::class,'login']);
-// Route::post('register',[AuthController::class,'register']);
+Route::post('login',[AuthController::class,'login']);
+Route::post('register',[AuthController::class,'register']);
