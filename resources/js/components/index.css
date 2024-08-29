@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  --dark-color: rgba(0, 0, 0, 1);
+  --light-color: rgb(184, 152, 103);
+  background-color: #f0f2f5 !important;
+}
+*{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+
+.calc-card:hover .on-hover-card{
+color: white;
+fill:white;
+border-color:white;
+}
+
+canvas{
+  max-height: 200px;
+}
