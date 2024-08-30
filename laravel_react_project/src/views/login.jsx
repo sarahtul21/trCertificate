@@ -38,9 +38,9 @@ export default function login(){
                 <input ref={emailRef} type="email" placeholder="Email" />
                     <input ref={passwordRef} type="password" placeholder="Password" />
                     <button className="btn btn-block">Login</button>
-                    <p className="message">
+                    {/* <p className="message">
                         Not Registered? <Link to= '/register'>Create a new account</Link>
-                    </p>
+                    </p> */}
                 </form>
             </div>
         </div>

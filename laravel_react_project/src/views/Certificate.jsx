@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 import cerLogo from './img/cerLogo.jpg'
 import person from './img/per.jpg'
-import DownloadPDF from './DownloadPDF';
-import QRCodeBox from './QRCodeBox';
+import DownloadPDF from '../Components/DownloadPDF';
+import QRCodeBox from '../Components/QRCodeBox';
 import { useParams } from 'react-router-dom';
 import axiosClient from '../axiosClient';
 
@@ -26,7 +26,7 @@ function Certificate() {
                   .then(({data}) => {
                     setLoading(false)
                     setUsers(data)
-                    console.log(data)
+                    // console.log(data)
                   })
                   .catch(() => {
                     setLoading(false)
@@ -37,12 +37,14 @@ function Certificate() {
 
   return (
     <>
-        <div className='flex justify-between items-center py-8 w-[90%] m-auto'>
-            <h1 className=' text-4xl text-accent'>Certificate</h1>
+    {loading ? <>loading...</> :
+    !user.id ? <>no certificate</> :
+    <>
+        <div className='flex justify-between items-center py-8 w-[90vw] '>
+            <h1 className=' text-4xl text-accent'>Certificate {user.cerType}</h1>
             <DownloadPDF downloadFileName="CustomPdf" rootElementId="pdf"  />
         </div>
-
-        <div className='border-2 rounded border-accent py-8 mx-auto w-fit bg-white text-black'>
+        {user.cerType == 1 ? <div className='border-2 rounded border-accent py-8 mx-auto w-fit bg-white text-black'>
             <div id="pdf" className='w-[993px] h-[1404px] p-3 mx-auto'>
                 <div className='flex flex-row justify-between items-center mb-8 mx-6'>
                     <img src={cerLogo} alt="cer" width='200px' />
@@ -71,14 +73,13 @@ function Certificate() {
                                     <p>Name Surname</p>
                                 </td>
                                 <td className='align-top pr-0 text-end'>:</td>
-                                {/* {user.name} */}
-                                <td className='max-w-[200px] '>MOHAMED ABO ALBESHR ABDOU ASAAD</td>
+                                <td className='max-w-[200px] '>{user.name}</td>
                                 <td>
                                     <p className='font-bold'>Başvuru No</p>
                                     <p>Application's ID</p>
                                 </td>
                                 <td className='align-top pr-0 text-end'>:</td>
-                                <td>20930610957</td>
+                                <td>{user.applicationID}</td>
                             </tr>
                             {/* row 2 */}
                             <tr className="border-gray-200 border-b-2">
@@ -87,13 +88,13 @@ function Certificate() {
                                     <p>Passport Number</p>
                                 </td>
                                 <td className='align-top pr-0 text-end'>:</td>
-                                <td className='max-w-[200px]'>N00340787</td>
+                                <td className='max-w-[200px]'>{user.passportNum}</td>
                                 <td>
                                     <p className='font-bold'>Sınav Tarihi</p>
                                     <p>Date of Exam</p>
                                 </td>
                                 <td className='align-top pr-0 text-end'>:</td>
-                                <td>10.06.2022</td>
+                                <td>{user.examDate}</td>
                             </tr>
                             {/* row 3 */}
                             <tr className="border-gray-200 border-b-2">
@@ -102,13 +103,13 @@ function Certificate() {
                                     <p>Nationality</p>
                                 </td>
                                 <td className='align-top pr-0 text-end'>:</td>
-                                <td className='max-w-[200px]'>Suriye</td>
+                                <td className='max-w-[200px]'>{user.nationality}</td>
                                 <td>
                                     <p className='font-bold'>Belge No</p>
                                     <p>Document ID</p>
                                 </td>
                                 <td className='align-top pr-0 text-end'>:</td>
-                                <td>11976</td>
+                                <td>{user.documentID}</td>
                             </tr>
                             {/* row 4 */}
                             <tr className="">
@@ -117,7 +118,7 @@ function Certificate() {
                                     <p>Date of Birth</p>
                                 </td>
                                 <td className='align-top pr-0 text-end'>:</td>
-                                <td className='max-w-[200px]'>23.02.2003</td>
+                                <td className='max-w-[200px]'>{user.birthDate}</td>
                                 <td>
                                     <p></p>
                                     <p></p>
@@ -163,11 +164,11 @@ function Certificate() {
                                     <p className='font-bold'>Temel Öğrenme Becerileri Testi</p>
                                     <p>Basic Learning Skills Test</p>
                                 </td>
-                                <td className='align-top border-e-2 font-bold'>80</td>
-                                <td className='align-top border-e-2 font-bold'>76</td>
-                                <td className='align-top border-e-2 font-bold'>3</td>
-                                <td className='align-top border-e-2 font-bold'>1</td>
-                                <td className='align-top font-bold'>95</td>
+                                <td className='align-top border-e-2 font-bold'>{user.questionsNum}</td>
+                                <td className='align-top border-e-2 font-bold'>{user.correctsNum}</td>
+                                <td className='align-top border-e-2 font-bold'>{user.inCorrectsNum}</td>
+                                <td className='align-top border-e-2 font-bold'>{user.blanksNum}</td>
+                                <td className='align-top font-bold'>{user.score}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -175,9 +176,15 @@ function Certificate() {
 
                 <QRCodeBox cerUrl={user.id}/>
             </div>
-        </div>
+        </div> :
+        <></>
+        }
+        
 
         <div className='h-[100px]'></div>
+    </>
+    }
+        
 
     </>
   );

@@ -21,7 +21,7 @@ class UpdateUserRequest extends FormRequest
         return [
             'name' => 'required|string|max:225',
             'passportNum' => 'required|string|max:225',
-            'applicationID' => 'required|number',
+            'applicationID' => 'required|string',
             'examDate' => 'required|date',
             'nationality' => 'required|string|max:225',
             'documentID' => 'required|number',
@@ -32,8 +32,7 @@ class UpdateUserRequest extends FormRequest
             'blanksNum' => 'required|number',
             'score' => 'required|number',
             'cerType' => 'required|number',
-            // 'name' => 'required|string|max:255',
-            // 'email' => 'required|email|unique:users,email,'.$this->id,
+            // 'email' => 'email|unique:users,email,'.$this->id,
             // 'password' => [
             //     Password::min(8)
             //     ->letters()

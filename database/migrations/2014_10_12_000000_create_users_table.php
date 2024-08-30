@@ -14,7 +14,18 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('passport_num');
+            $table->string('passportNum');
+            $table->string('applicationID');
+            $table->date('examDate');
+            $table->string('nationality');
+            $table->number('documentID');
+            $table->date('birthDate');
+            $table->number('questionsNum');
+            $table->number('correctsNum');
+            $table->number('inCorrectsNum');
+            $table->number('blanksNum');
+            $table->number('score');
+            $table->number('cerType');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

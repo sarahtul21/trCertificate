@@ -33,7 +33,6 @@ class User extends Authenticatable
         'blanksNum',
         'score',
         'cerType',
-        // 'name',
         // 'email',
         // 'password',
     ];

@@ -22,8 +22,8 @@
     box-sizing: border-box;
 
 }
-html{
-    background-color: #f0f2f5;
+html , main{
+    background-color: #f0f2f5 !important;
 }
 html, body, #root, #defaultLayout, #guestLayout {
     min-height: 100vh;
@@ -42,22 +42,19 @@ body {
     background-color: #f6f6f6;
 }
 
-input {
+input, select {
     outline: 0;
-    background: #ffffff;
+    /* background-color: #ddddde !important; */
     width: 100%;
     border: 2px solid #e6e6e6;
     margin: 0 0 15px;
-    padding: 15px;
+    /* padding: 15px; */
     box-sizing: border-box;
     font-size: 14px;
     transition: all 0.3s;
 }
 
-input:focus {
-    border-color: #5b08a7;
-}
-
+/*
 .btn,
 .btn-add,
 .btn-edit,
@@ -112,7 +109,7 @@ input:focus {
 
 .text-center {
     text-align: center;
-}
+} */
 /*
 table {
     width: 100%;

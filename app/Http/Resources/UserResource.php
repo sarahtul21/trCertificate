@@ -27,9 +27,8 @@ class UserResource extends JsonResource
             'blanksNum' => $this->blanksNum,
             'score' => $this->score,
             'cerType' => $this->cerType,
-            // 'id' => $this->id,
-            // 'name' => $this->name,
             // 'email' => $this->email,
+            // 'password' => $this->password,
         ];
     }
 }

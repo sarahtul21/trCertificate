@@ -12,9 +12,9 @@ module.exports = {
     theme: {
       extend: {
         colors: {
-          'main-color': "#65b946",
-          'second-color': "#313A4E",
-          'third-color': "#f0f2f5"
+        //   'main-color': "#65b946",
+        //   'second-color': "#313A4E",
+        //   'third-color': "#f0f2f5"
         },
 
         height: {
@@ -22,9 +22,9 @@ module.exports = {
         },
 
         backgroundColor: {
-          'dark-bg': "rgba(0, 0, 0, 1)",
-          'gray-bg': '#0f0f0f',
-          'light-bg': "#b89867",
+        //   'dark-bg': "rgba(0, 0, 0, 1)",
+        //   'gray-bg': '#0f0f0f',
+        //   'light-bg': "#b89867",
         },
       },
     },
