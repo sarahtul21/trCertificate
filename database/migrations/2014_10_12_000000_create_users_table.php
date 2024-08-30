@@ -26,10 +26,10 @@ return new class extends Migration
             $table->number('blanksNum');
             $table->number('score');
             $table->number('cerType');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            // $table->string('email')->unique();
+            // $table->timestamp('email_verified_at')->nullable();
+            // $table->string('password');
+            // $table->rememberToken();
             $table->timestamps();
         });
     }
