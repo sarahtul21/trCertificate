@@ -47,7 +47,7 @@ export default function users(){
           <Link className="btn btn-accent" to="/certificates/new">Add new</Link>
         </div>
         <div className="card animated fadeInDown overflow-x-auto">
-        <table className="table table-zebra table-pin-rows table-pin-cols table-sm text-center border-gray-200 w-fit m-auto">
+        <table className="table table-pin-rows table-pin-cols table-sm text-center border-gray-200 w-fit m-auto">
 
             <thead className='border-2 border-gray-200'>
             <tr>

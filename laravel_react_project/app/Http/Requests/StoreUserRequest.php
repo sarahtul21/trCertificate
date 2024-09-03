@@ -25,23 +25,23 @@ class StoreUserRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'email' => 'nullable|email',
-            'passport' => 'string',
+            'passport' => 'required|string',
             'password' => [
                 'required',
                 Password::min(8)
                 ->letters()
             ],
-            'application' =>  'string',
-            'document' =>  'string',
-            'nationality' =>  'string',
-            'birth' => 'string',
-            'exam' => 'string',
-            'question' => 'string',
-            'correct' => 'string',
-            'incorrect' => 'string',
-            'blank' => 'string',
-            'score' => 'string',
-            'type' => 'string',
+            'application' =>  'required|string',
+            'document' =>  'required|string',
+            'nationality' =>  'required|string',
+            'birth' => 'required|string',
+            'exam' => 'required|string',
+            'question' => 'required|string',
+            'correct' => 'required|string',
+            'incorrect' => 'required|string',
+            'blank' => 'required|string',
+            'score' => 'required|string',
+            'type' => 'required|string',
             'image' => 'required|image|mimes:png,jpg,jpeg|max:2048',
 
         ];
