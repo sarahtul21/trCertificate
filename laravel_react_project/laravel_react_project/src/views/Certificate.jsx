@@ -36,7 +36,10 @@ function Certificate() {
         <div className='h-screen grid place-items-center'>
             <span className="loading loading-infinity loading-lg text-accent"></span>
         </div> :
-    !user.id ? <div className='text-center text-2xl text-red-500 h-screen grid place-items-center'>This ID has no certificate</div> :
+    !user.id ?
+    <div className='text-center text-2xl text-red-500 h-screen grid place-items-center'>
+        This ID has no certificate
+    </div> :
     <>
         <div className='flex justify-between items-center py-8 w-[90vw] m-auto'>
             <h1 className=' text-4xl text-accent'>Certificate</h1>
