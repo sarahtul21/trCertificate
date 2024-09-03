@@ -14,18 +14,18 @@ const router = createBrowserRouter ([
         element: <DefaultLayout />,
         children: [
             {
-                path: '/users',
+                path: '/certificates',
                 element: <Users />,
             },
             {
-                path: '/users/new',
+                path: '/certificates/new',
                 element: <UserForm key="userCreate"/>
             },
 
         ]
     },
     {
-        path: '/users/:id',
+        path: '/certificate/:id',
         element: <Certificate  />
     },
     {

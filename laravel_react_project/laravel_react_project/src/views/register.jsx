@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axiosClient from "../axiosClient";
 import { useStateContext } from "../contexts/contextprovider";
 
@@ -9,6 +10,7 @@ export default function register(){
     const nameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
+    const navigate = useNavigate();
 
     const {setUser, setToken} = useStateContext();
 
@@ -22,25 +24,27 @@ export default function register(){
         axiosClient.post("/register",payload).then(({data})=>{
             setUser(data.user);
             setToken(data.token);
+            navigate('/certificates');
     }).catch(err => {
         const response = err.response;
         if(response && response.status === 422){
-            console.log(response.data.errors);
+            // console.log(response.data.errors);
+            alert('Error code : ' +response.status)
         }
     });
 }
 
     return(
-        <div className="login-signup-form animated fadeinDown">
+        <div className="login-signup-form animated fadeinDown rounded">
             <div className="form">
                 <h1 className="title">
                     Create A New Account
                 </h1>
                 <form onSubmit={Submit}>
-                    <input ref={nameRef} type="name" placeholder="Name" />
-                    <input ref={emailRef} type="email" placeholder="Email" />
-                    <input ref={passwordRef} type="password" placeholder="Password" />
-                    <button className="btn btn-block">Register</button>
+                    <input ref={nameRef} type="name" placeholder="Name" className='input input-accent w-full bg-[#f7f7f7] mb-3'/>
+                    <input ref={emailRef} type="email" placeholder="Email" className='input input-accent w-full bg-[#f7f7f7] mb-3'/>
+                    <input ref={passwordRef} type="password" placeholder="Password" className='input input-accent w-full bg-[#f7f7f7] mb-3'/>
+                    <button className="btn btn-block btn-accent">Register</button>
                     <p className="message">
                         Already Have An Account? <Link to= '/login'>Login</Link>
                     </p>

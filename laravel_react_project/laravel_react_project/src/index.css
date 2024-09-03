@@ -5,11 +5,17 @@
 @tailwind utilities;
 
 
+
+
 * {
     box-sizing: border-box;
 }
 html, body, #root, #defaultLayout, #guestLayout {
     min-height: 100vh;
+}
+.pdf-size{
+    width: 100vw;
+    height: calc(100vw * 1.4138972) !important;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -24,8 +30,14 @@ body {
     color: #212121;
     background-color: #f6f6f6;
 }
+table p{
+    line-height: initial;
+}
+td{
+    line-height: initial !important;
+}
 
-input , select{
+/* input , select{
     outline: 0;
     background: #ffffff;
     width: 100%;
@@ -39,7 +51,7 @@ input , select{
 
 input:focus, select:focus {
     border-color: #5b08a7;
-}
+} */
 /*
 .btn,
 .btn-add,
