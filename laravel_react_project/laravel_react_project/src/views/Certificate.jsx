@@ -14,6 +14,10 @@ function Certificate() {
     const [errors, setErrors] = useState(null);
 
     const [userId , setUserId] = useState()
+
+    const exam = new Date(user.exam);
+    const birth = new Date(user.birth);
+
 // console.log(application)
     if(application)
         {
@@ -100,7 +104,7 @@ function Certificate() {
                                     <p className='text-nowrap'>Date of Exam</p>
                                 </td>
                                 <td className='align-top w-2 text-center px-0 py-[2vw]'>:</td>
-                                <td className='px-0 py-[2vw]'>{user.exam}</td>
+                                <td className='px-0 py-[2vw]'>{exam.toLocaleDateString()}</td>
                             </tr>
                             {/* row 3 */}
                             <tr className="border-gray-200 border-b-2">
@@ -124,7 +128,7 @@ function Certificate() {
                                     <p className='text-nowrap'>Date of Birth</p>
                                 </td>
                                 <td className='align-top w-2 text-center px-0 py-[2vw]'>:</td>
-                                <td className='max-w-[200px] px-0 py-[2vw]'>{user.birth}</td>
+                                <td className='max-w-[200px] px-0 py-[2vw]'>{birth.toLocaleDateString()}</td>
                                 <td>
                                     <p></p>
                                     <p></p>
