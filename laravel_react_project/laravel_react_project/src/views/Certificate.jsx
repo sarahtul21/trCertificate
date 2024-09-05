@@ -57,8 +57,8 @@ function Certificate() {
                     <img src={cerLogo} alt="cer" className='w-[30%]' />
                     <div className='text-center w-[70%] m-auto'>
                         <h2 className='text-[5vw] font-bold'>2022 ERÜYÖS</h2>
-                        <h3 className='text-[3vw] font-bold'>SINAV SONUÇ BELGESİ</h3>
-                        <p className='text-[1.5vw]'>(Examination Result Document)</p>
+                        <h3 className='text-[4vw] font-bold'>SINAV SONUÇ BELGESİ</h3>
+                        <p className='text-[2.3vw]'>(Examination Result Document)</p>
                     </div>
                 </div>
                 <div className='text-end  text-[1.5vw] pe-3'>
