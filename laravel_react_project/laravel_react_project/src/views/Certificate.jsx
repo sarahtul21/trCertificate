@@ -47,7 +47,7 @@ function Certificate() {
     <>
         <div className='flex justify-between items-center py-8 w-[90vw] m-auto'>
             <h1 className=' text-4xl text-accent'>Certificate</h1>
-            <DownloadPDF downloadFileName="CustomPdf" rootElementId="pdf" imageName={user.image}  />
+{/*             <DownloadPDF downloadFileName="CustomPdf" rootElementId="pdf" imageName={user.image}  /> */}
         </div>
         {user.type == 1 ?
         <>
@@ -61,7 +61,7 @@ function Certificate() {
                         <p className='text-[1.5vw]'>(Examination Result Document)</p>
                     </div>
                 </div>
-                <div className='text-end  text-[1.5vw] pe-3'>
+                <div className='text-end  text-[1.5vw] pe-3 font-bold'>
                     <p>Erciyes Üniversitesi Yabancı Uyruklu Öğrenci Sınavı</p>
                     <p>(Erciyes University Examination for Foreign Students)</p>
                 </div>
