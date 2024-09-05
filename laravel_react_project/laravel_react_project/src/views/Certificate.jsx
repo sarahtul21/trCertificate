@@ -69,7 +69,7 @@ function Certificate() {
                     <img src={env.API_LINK_STORAGE + user.image} alt="cer" className='w-[23%] pt-6' />
                     {/* env.API_LINK_STORAGE + user.image */}
                     <div className="overflow-x-auto w-[70%]">
-                        <table className="table text-[1.5vw]">
+                        <table className="table text-[1.2vw]">
 
                             <tbody>
                             {/* row 1 */}
