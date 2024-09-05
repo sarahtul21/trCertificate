@@ -56,12 +56,12 @@ function Certificate() {
                 <div className='flex flex-row justify-between items-center mb-8 mx-6'>
                     <img src={cerLogo} alt="cer" className='w-[30%]' />
                     <div className='text-center w-[70%] m-auto'>
-                        <h2 className='text-[5vw]'>2022 ERÜYÖS</h2>
-                        <h3 className='text-[3vw]'>SINAV SONUÇ BELGESİ</h3>
+                        <h2 className='text-[5vw] font-bold'>2022 ERÜYÖS</h2>
+                        <h3 className='text-[3vw] font-bold'>SINAV SONUÇ BELGESİ</h3>
                         <p className='text-[1.5vw]'>(Examination Result Document)</p>
                     </div>
                 </div>
-                <div className='text-end  text-[1.5vw] pe-3 font-bold'>
+                <div className='text-end  text-[1.5vw] pe-3'>
                     <p>Erciyes Üniversitesi Yabancı Uyruklu Öğrenci Sınavı</p>
                     <p>(Erciyes University Examination for Foreign Students)</p>
                 </div>
