@@ -25,7 +25,7 @@ const router = createBrowserRouter ([
         ]
     },
     {
-        path: '/certificate/:id',
+        path: '/belge/SonucBelgesi/BasvuruNo/:application',
         element: <Certificate  />
     },
     {

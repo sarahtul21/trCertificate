@@ -8,24 +8,28 @@ import axiosClient from '../axiosClient';
 import env from '../env';
 
 function Certificate() {
-    const {id} = useParams();
+    const {application} = useParams();
     const [user, setUsers] = useState({});
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState(null);
-
-    if(id)
+    
+    const [userId , setUserId] = useState()
+// console.log(application)
+    if(application)
         {
             useEffect(() => {
                 setLoading(true)
-                axiosClient.get(`/users/${id}`)
-                  .then(({data}) => {
-                    setLoading(false)
-                    setUsers(data)
-                    // console.log(user)
-                  })
-                  .catch(() => {
-                    setLoading(false)
-                  })
+                axiosClient.get('/users')
+                .then(({ data }) => {
+                setLoading(false)
+                const item = data.data.find((element) => element.application === application)
+                // console.log(item)
+                setUsers(item)
+                
+                })
+                .catch(() => {
+                setLoading(false)
+                })
               }, [])
         }
 
@@ -36,7 +40,7 @@ function Certificate() {
         <div className='h-screen grid place-items-center'>
             <span className="loading loading-infinity loading-lg text-accent"></span>
         </div> :
-    !user.id ?
+    !user.application ?
     <div className='text-center text-2xl text-red-500 h-screen grid place-items-center'>
         This ID has no certificate
     </div> :
@@ -175,7 +179,7 @@ function Certificate() {
                     </table>
                 </div>
 
-                <QRCodeBox cerUrl={user.id}/>
+                <QRCodeBox cerUrl={user.application}/>
             </div>
         </div>
         <div className='h-8'></div>

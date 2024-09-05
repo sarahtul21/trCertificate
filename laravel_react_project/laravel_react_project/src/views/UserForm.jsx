@@ -85,7 +85,7 @@ export default function UserForm(){
                 .then(({ data }) => {
                 setLoading(false)
                 const item = data.data.find((element) => element.passportNum === user.passportNum)
-                setUserId(item.id)
+                setUserId(item.application)
                 })
                 .catch(() => {
                 setLoading(false)
@@ -129,12 +129,12 @@ export default function UserForm(){
                 <input value={user.application} onChange={ev => setUsers({...user, application: ev.target.value})} placeholder="Application ID" className='input input-accent w-full bg-[#f7f7f7] mb-3'/>
                 <input value={user.document} onChange={ev => setUsers({...user, document: ev.target.value})} placeholder="Document ID" className='input input-accent w-full bg-[#f7f7f7] mb-3'/>
                 <input value={user.nationality} onChange={ev => setUsers({...user, nationality: ev.target.value})} placeholder="Nationality" className='input input-accent w-full bg-[#f7f7f7] mb-3'/>
-                <div class='flex justify-between items-center '>
-                    <lable className='w-[30%] text-accent'>Date of Birth:</lable>
+                <div className='flex justify-between items-center '>
+                    <label className='w-[30%] text-accent'>Date of Birth:</label>
                     <input value={user.birth} type='date' onChange={ev => setUsers({...user, birth: ev.target.value})} placeholder="Date of birth" className='input input-accent w-[70%] bg-[#f7f7f7] mb-3'/>
                 </div>
-                <div class='flex justify-between items-center '>
-                    <lable className='w-[30%] text-accent'>Date of Exam:</lable>
+                <div className='flex justify-between items-center '>
+                    <label className='w-[30%] text-accent'>Date of Exam:</label>
                     <input value={user.exam} type='date' onChange={ev => setUsers({...user, exam: ev.target.value})} placeholder="Date of exam" className='input input-accent w-[70%] bg-[#f7f7f7] mb-3'/>
                 </div>
                 <input value={user.question} onChange={ev => setUsers({...user, question: ev.target.value})} placeholder="Total question number" className='input input-accent w-full bg-[#f7f7f7] mb-3'/>
@@ -147,8 +147,8 @@ export default function UserForm(){
                         <option  value={t.id} key={t.id}>{t.name}</option>
                     ))}
                 </select>
-                <div class='flex justify-between items-center '>
-                    <lable className='w-[30%] text-accent'>Personal photo:</lable>
+                <div className='flex justify-between items-center '>
+                    <label className='w-[30%] text-accent'>Personal photo:</label>
                     <input accept="image/*" type='file' onChange={ev => setUsers({...user, image: ev.target.files[0] })} placeholder="image" className='file-input file-input-bordered file-input-accent  w-[70%] bg-[#f7f7f7] mb-3' style={{padding:'0px'}}/>
                 </div>
                 <button className="btn btn-accent w-full m-auto">Save</button>

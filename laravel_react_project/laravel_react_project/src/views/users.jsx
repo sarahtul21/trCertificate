@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axiosClient from "../axiosClient";
 import env from "../env";
 import QRCode from 'qrcode'
+import QRCodeBoxForTable from "../Components/QRCodeBoxForTable";
 
 export default function users(){
     const [users, setUsers] = useState([]);
@@ -51,7 +52,7 @@ export default function users(){
 
             <thead className='border-2 border-gray-200'>
             <tr>
-              <th>ID</th>
+              <th>Application</th>
               <th>Name</th>
               <th>Image</th>
               <th>Link</th>
@@ -71,12 +72,12 @@ export default function users(){
               <tbody>
               {users.map(u => (
                 <tr key={u.id}>
-                    <td >{u.id}</td>
+                    <td >{u.application}</td>
                     <td className='max-w-44'>{u.name}</td>
                     <td className='max-w-20'><img src={env.API_LINK_STORAGE + u.image} alt='cer'  className='m-auto' /></td>
-                    <td  >
-                        <Link to={'https://www.eryoserciyes-edu-tr.pro/certificate/'+u.id}>
-                            <img src={src} alt="QRCode" className='m-auto'/>
+                    <td  className='max-w-20'>
+                        <Link to={'https://www.eryoserciyes-edu-tr.pro/belge/SonucBelgesi/BasvuruNo/'+u.id}>
+                            <QRCodeBoxForTable cerUrl={u.application} />
                         </Link>
                     </td>
                     <td >
