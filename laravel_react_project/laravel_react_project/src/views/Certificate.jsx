@@ -12,7 +12,7 @@ function Certificate() {
     const [user, setUsers] = useState({});
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState(null);
-    
+
     const [userId , setUserId] = useState()
 // console.log(application)
     if(application)
@@ -25,7 +25,7 @@ function Certificate() {
                 const item = data.data.find((element) => element.application === application)
                 // console.log(item)
                 setUsers(item)
-                
+
                 })
                 .catch(() => {
                 setLoading(false)
@@ -52,7 +52,7 @@ function Certificate() {
         {user.type == 1 ?
         <>
         <div className='py-8 mx-auto w-fit bg-white text-black'>
-            <div id="pdf" className='p-1 mx-auto pdf-size'>
+            <div id="pdf" className='p-1 mx-auto pdf-size pt-8'>
                 <div className='flex flex-row justify-between items-center mb-8 mx-6'>
                     <img src={cerLogo} alt="cer" className='w-[30%]' />
                     <div className='text-center w-[70%] m-auto'>
