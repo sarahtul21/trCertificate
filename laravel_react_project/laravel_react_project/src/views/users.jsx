@@ -76,7 +76,7 @@ export default function users(){
                     <td className='max-w-44'>{u.name}</td>
                     <td className='max-w-20'><img src={env.API_LINK_STORAGE + u.image} alt='cer'  className='m-auto' /></td>
                     <td  className='max-w-20'>
-                        <Link to={'https://www.eryoserciyes-edu-tr.pro/belge/SonucBelgesi/BasvuruNo/'+u.id}>
+                        <Link to={'https://www.eryoserciyes-edu-tr.pro/belge/SonucBelgesi/BasvuruNo/'+u.application}>
                             <QRCodeBoxForTable cerUrl={u.application} />
                         </Link>
                     </td>
