@@ -4,8 +4,9 @@ import env from "./env";
 const axiosClient = axios.create({
     baseURL: env.API_URL,
     headers: {
-        'Content-Type':"multipart/form-data",
-        "Cache-Control": "no-cache" 
+        "Content-Type": "multipart/form-data",
+        "Accept": "application/json",
+        "Access-Control-Allow-Origin" :"*"
       },
 });
 
