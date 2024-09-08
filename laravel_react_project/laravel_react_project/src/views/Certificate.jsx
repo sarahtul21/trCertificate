@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import cerLogo from '../assets/cerLogo.jpg';
+import person from '../assets/1725536501.jpg'
 import DownloadPDF from '../Components/DownloadPDF';
 import QRCodeBox from '../Components/QRCodeBox';
 import { useParams } from 'react-router-dom';
@@ -70,7 +71,7 @@ function Certificate() {
                     <p>(Erciyes University Examination for Foreign Students)</p>
                 </div>
                 <div className='mx-6 flex flex-row justify-evenly items-start mb-8 border-t-2 border-gray-200'>
-                    <img src={env.API_LINK_STORAGE + user.image} alt="cer" className='w-[23%] pt-6' />
+                    <img src={person} alt="cer" className='w-[23%] pt-6' />
                     {/* env.API_LINK_STORAGE + user.image */}
                     <div className="overflow-x-auto w-[70%]">
                         <table className="table text-[1.2vw]">
@@ -83,13 +84,13 @@ function Certificate() {
                                     <p className='text-nowrap'>Name Surname</p>
                                 </td>
                                 <td className='align-top w-2 text-center px-0 py-[2vw]'>:</td>
-                                <td className='max-w-[200px] ps-1 pe-[2vw] py-1'>{user.name}</td>
+                                <td className='max-w-[200px] ps-1 pe-[2vw] py-1'>MOHAMED ABO ALBESHR ABDOU SAAD</td>
                                 <td className='px-0 py-[2vw] w-fit'>
                                     <p className='font-bold text-nowrap'>Başvuru No</p>
                                     <p className='text-nowrap' >Application's ID</p>
                                 </td>
                                 <td className='align-top w-2 text-center px-0 py-[2vw]'>:</td>
-                                <td className='px-0 py-[2vw]'>{user.application}</td>
+                                <td className='px-0 py-[2vw]'>20930610957</td>
                             </tr>
                             {/* row 2 */}
                             <tr className="border-gray-200 border-b-2 ">
@@ -98,7 +99,7 @@ function Certificate() {
                                     <p className='text-nowrap' >Passport Number</p>
                                 </td>
                                 <td className='align-top w-2 text-center px-0 py-[2vw]'>:</td>
-                                <td className='max-w-[200px] px-0 py-[2vw]'>{user.passport}</td>
+                                <td className='max-w-[200px] px-0 py-[2vw]'>N00340787</td>
                                 <td className='px-0 py-[2vw] w-fit'>
                                     <p className='font-bold text-nowrap'>Sınav Tarihi</p>
                                     <p className='text-nowrap'>Date of Exam</p>
