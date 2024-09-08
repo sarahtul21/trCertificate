@@ -16,7 +16,7 @@ function Certificate() {
 
     const [userId , setUserId] = useState()
 
-    
+
 
 // console.log(application)
     if(application)
@@ -44,16 +44,16 @@ function Certificate() {
         <div className='h-screen grid place-items-center'>
             <span className="loading loading-infinity loading-lg text-accent"></span>
         </div> :
-    !user.application ?
-    <div className='text-center text-2xl text-red-500 h-screen grid place-items-center'>
-        This ID has no certificate
-    </div> :
+    // !user.application ?
+    // <div className='text-center text-2xl text-red-500 h-screen grid place-items-center'>
+    //     This ID has no certificate
+    // </div> :
     <>
         <div className='flex justify-between items-center py-8 w-[90vw] m-auto'>
-        
+
 {/*             <DownloadPDF downloadFileName="CustomPdf" rootElementId="pdf" imageName={user.image}  /> */}
         </div>
-        {user.type == 1 ?
+        {/* {user.type == 1 ? */}
         <>
         <div className='py-8 mx-auto w-fit bg-white text-black'>
             <div id="pdf" className='p-1 mx-auto pdf-size pt-8'>
@@ -104,7 +104,7 @@ function Certificate() {
                                     <p className='text-nowrap'>Date of Exam</p>
                                 </td>
                                 <td className='align-top w-2 text-center px-0 py-[2vw]'>:</td>
-                                <td className='px-0 py-[2vw]'>{user.exam}</td>
+                                <td className='px-0 py-[2vw]'>2022-06-10</td>
                             </tr>
                             {/* row 3 */}
                             <tr className="border-gray-200 border-b-2">
@@ -113,13 +113,13 @@ function Certificate() {
                                     <p>Nationality</p>
                                 </td>
                                 <td className='align-top w-2 text-center px-0 py-[2vw]'>:</td>
-                                <td className='max-w-[200px] px-0 py-[2vw]'>{user.nationality}</td>
+                                <td className='max-w-[200px] px-0 py-[2vw]'>Suriye</td>
                                 <td className='px-0 py-[2vw] w-fit'>
                                     <p className='font-bold text-nowrap'>Belge No</p>
                                     <p className='text-nowrap'>Document ID</p>
                                 </td>
                                 <td className='align-top w-2 text-center px-0 py-[2vw]'>:</td>
-                                <td className='px-0 py-[2vw]'>{user.document}</td>
+                                <td className='px-0 py-[2vw]'>11976</td>
                             </tr>
                             {/* row 4 */}
                             <tr className="">
@@ -128,7 +128,7 @@ function Certificate() {
                                     <p className='text-nowrap'>Date of Birth</p>
                                 </td>
                                 <td className='align-top w-2 text-center px-0 py-[2vw]'>:</td>
-                                <td className='max-w-[200px] px-0 py-[2vw]'>{user.birth}</td>
+                                <td className='max-w-[200px] px-0 py-[2vw]'>2003-02-23</td>
                                 <td>
                                     <p></p>
                                     <p></p>
@@ -173,24 +173,24 @@ function Certificate() {
                                     <p className='font-bold text-nowrap'>Temel Öğrenme Becerileri Testi</p>
                                     <p className='text-nowrap'>Basic Learning Skills Test</p>
                                 </td>
-                                <td className='align-top border-e-2 font-bold px-0 py-[2vw]'>{user.question}</td>
-                                <td className='align-top border-e-2 font-bold px-0 py-[2vw]'>{user.correct}</td>
-                                <td className='align-top border-e-2 font-bold px-0 py-[2vw]'>{user?.incorrect}</td>
-                                <td className='align-top border-e-2 font-bold px-0 py-[2vw]'>{user.blank}</td>
-                                <td className='align-top font-bold px-0 py-[2vw]'>{user.score}</td>
+                                <td className='align-top border-e-2 font-bold px-0 py-[2vw]'>80</td>
+                                <td className='align-top border-e-2 font-bold px-0 py-[2vw]'>76</td>
+                                <td className='align-top border-e-2 font-bold px-0 py-[2vw]'>3</td>
+                                <td className='align-top border-e-2 font-bold px-0 py-[2vw]'>1</td>
+                                <td className='align-top font-bold px-0 py-[2vw]'>95</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <QRCodeBox cerUrl={user.application}/>
+                <QRCodeBox cerUrl={20930610957}/>
             </div>
         </div>
         <div className='h-8'></div>
         </>
-        :
+        {/* :
         <></>
-        }
+        } */}
 
     </>
     }
