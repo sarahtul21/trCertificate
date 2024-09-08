@@ -16,8 +16,7 @@ function Certificate() {
 
     const [userId , setUserId] = useState()
 
-    const exam = new Date(user.exam);
-    const birth = new Date(user.birth);
+    
 
 // console.log(application)
     if(application)
@@ -51,7 +50,7 @@ function Certificate() {
     </div> :
     <>
         <div className='flex justify-between items-center py-8 w-[90vw] m-auto'>
-            <h1 className=' text-4xl text-accent'>Certificate</h1>
+        
 {/*             <DownloadPDF downloadFileName="CustomPdf" rootElementId="pdf" imageName={user.image}  /> */}
         </div>
         {user.type == 1 ?
@@ -105,7 +104,7 @@ function Certificate() {
                                     <p className='text-nowrap'>Date of Exam</p>
                                 </td>
                                 <td className='align-top w-2 text-center px-0 py-[2vw]'>:</td>
-                                <td className='px-0 py-[2vw]'>{exam.toLocaleDateString()}</td>
+                                <td className='px-0 py-[2vw]'>{user.exam}</td>
                             </tr>
                             {/* row 3 */}
                             <tr className="border-gray-200 border-b-2">
@@ -129,7 +128,7 @@ function Certificate() {
                                     <p className='text-nowrap'>Date of Birth</p>
                                 </td>
                                 <td className='align-top w-2 text-center px-0 py-[2vw]'>:</td>
-                                <td className='max-w-[200px] px-0 py-[2vw]'>{birth.toLocaleDateString()}</td>
+                                <td className='max-w-[200px] px-0 py-[2vw]'>{user.birth}</td>
                                 <td>
                                     <p></p>
                                     <p></p>

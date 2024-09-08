@@ -52,7 +52,7 @@ export default function users(){
 
             <thead className='border-2 border-gray-200'>
             <tr>
-              <th>Application</th>
+              
               <th>Name</th>
               <th>Image</th>
               <th>Link</th>
@@ -72,7 +72,7 @@ export default function users(){
               <tbody>
               {users.map(u => (
                 <tr key={u.id}>
-                    <td >{u.application}</td>
+                    
                     <td className='max-w-44'>{u.name}</td>
                     <td className='max-w-20'><img src={env.API_LINK_STORAGE + u.image} alt='cer'  className='m-auto' /></td>
                     <td  className='max-w-20'>
