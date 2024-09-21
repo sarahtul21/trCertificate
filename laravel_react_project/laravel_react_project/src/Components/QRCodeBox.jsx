@@ -19,7 +19,7 @@ function QRCodeBox({cerUrl}) {
                     <div className=''>
                         <img src={src} alt="QRCode" className='w-[30vw]' />
                     </div>
-                    <div className=''>
+                    <div className='text-left'>
                         <p>Bu belgeyi</p>
                         <p><span className='font-bold'>{linkURL + cerUrl + ' '}</span>adresinden doğrulayabilirsiniz</p>
                     </div>

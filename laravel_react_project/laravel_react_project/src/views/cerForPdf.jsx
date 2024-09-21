@@ -1,72 +1,22 @@
 
-import { useEffect, useState } from 'react';
 import cerLogo from '../assets/cerLogo.jpg';
 import person from '../assets/1725536501.jpg'
-import DownloadPDF from '../Components/DownloadPDF';
 import QRCodeBox from '../Components/QRCodeBox';
-import { useAsyncError, useParams } from 'react-router-dom';
-import axiosClient from '../axiosClient';
-import env from '../env';
-import {certificates} from '../assets/certificates.json'
 
-function Certificate() {
-    const {application} = useParams();
-    const [user, setUsers] = useState({});
-    const [loading, setLoading] = useState(false);
-    const [errors, setErrors] = useState(null);
-    const [userId , setUserId] = useState()
-
-// console.log(application)
-    if(application)
-        {
-            useEffect(() => {
-                setLoading(true)
-                const item = certificates.find((element) => element.application === application);
-                setUsers(item)
-                setLoading(false)
-                // console.log(item.type)
-                // axiosClient.get('/users')
-                // .then(({ data }) => {
-                // setLoading(false)
-                // const item = data.data.find((element) => element.application === application)
-                // // console.log(item)
-                // setUsers(item)
-                // })
-                // .catch(() => {
-                // setLoading(false)
-                // })
-              }, [])
-        }
-
-
+function CerForPdf({user}) {
   return (
-    <>
-    {loading ?
-        <div className='h-screen grid place-items-center'>
-            <span className="loading loading-infinity loading-lg text-accent"></span>
-        </div> :
-    !user.application ?
-    <div className='text-center text-2xl text-red-500 h-screen grid place-items-center'>
-        This ID has no certificate
-    </div> :
-    <>
-        <div className='flex justify-between items-center py-8 w-[90vw] m-auto'>
-
-{/*             <DownloadPDF downloadFileName="CustomPdf" rootElementId="pdf" imageName={user.image}  /> */}
-        </div>
-        {user.type == 1 ?
-        <>
-        <div className='py-8 mx-auto w-fit bg-white text-black'>
+        user.type == 1 ?
+        <div className='py-8 mx-auto  bg-white text-black'>
             <div id="pdf" className='p-1 mx-auto pdf-size pt-8'>
                 <div className='flex flex-row justify-between items-center mb-8 mx-6'>
                     <img src={cerLogo} alt="cer" className='w-[30%]' />
                     <div className='text-center w-[70%] m-auto'>
-                        <h2 className='text-[5vw] font-bold'>2022 ERÜYÖS</h2>
-                        <h3 className='text-[4vw] font-bold'>SINAV SONUÇ BELGESİ</h3>
-                        <p className='text-[2.3vw]'>(Examination Result Document)</p>
+                        <h2 className='text-4xl font-bold'>2022 ERÜYÖS</h2>
+                        <h3 className='text-3xl font-bold'>SINAV SONUÇ BELGESİ</h3>
+                        <p className='text-xl'>(Examination Result Document)</p>
                     </div>
                 </div>
-                <div className='text-end  text-[1.5vw] pe-3'>
+                <div className='text-end pe-3'>
                     <p>Erciyes Üniversitesi Yabancı Uyruklu Öğrenci Sınavı</p>
                     <p>(Erciyes University Examination for Foreign Students)</p>
                 </div>
@@ -74,7 +24,7 @@ function Certificate() {
                     <img src={person} alt="cer" className='w-[23%] pt-6' />
                     {/* env.API_LINK_STORAGE + user.image */}
                     <div className="overflow-x-auto w-[70%]">
-                        <table className="table text-[1.2vw]">
+                        <table className="table ">
 
                             <tbody>
                             {/* row 1 */}
@@ -187,18 +137,9 @@ function Certificate() {
                 <QRCodeBox cerUrl={user.application}/>
             </div>
         </div>
-        <div className='h-8'></div>
-        </>
-        :
-        <>this type has no certificates</>
-        }
-
-    </>
-    }
-
-
-    </>
+        : 
+        <></>
   );
 }
 
-export default Certificate;
+export default CerForPdf;
