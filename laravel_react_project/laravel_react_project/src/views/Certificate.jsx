@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from 'react';
 import cerLogo from '../assets/cerLogo.jpg';
-import person from '../assets/1725536501.jpg'
+import person1 from '../assets/1725536501.jpg'
+import person2 from '../assets/2.jpg'
 import DownloadPDF from '../Components/DownloadPDF';
 import QRCodeBox from '../Components/QRCodeBox';
 import { useAsyncError, useParams } from 'react-router-dom';
@@ -61,7 +62,7 @@ function Certificate() {
                 <div className='flex flex-row justify-between items-center mb-8 mx-6'>
                     <img src={cerLogo} alt="cer" className='w-[30%]' />
                     <div className='text-center w-[70%] m-auto'>
-                        <h2 className='text-[5vw] font-bold'>2022 ERÜYÖS</h2>
+                        <h2 className='text-[5vw] font-bold'>{user.year} ERÜYÖS</h2>
                         <h3 className='text-[4vw] font-bold'>SINAV SONUÇ BELGESİ</h3>
                         <p className='text-[2.3vw]'>(Examination Result Document)</p>
                     </div>
@@ -71,7 +72,7 @@ function Certificate() {
                     <p>(Erciyes University Examination for Foreign Students)</p>
                 </div>
                 <div className='mx-6 flex flex-row justify-evenly items-start mb-8 border-t-2 border-gray-200'>
-                    <img src={person} alt="cer" className='w-[23%] pt-6' />
+                    <img src={user.image} alt="cer" className='w-[23%] pt-6' />
                     {/* env.API_LINK_STORAGE + user.image */}
                     <div className="overflow-x-auto w-[70%]">
                         <table className="table text-[1.2vw]">
